@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetCoreApiStarter.Models;
 
 namespace NetCoreApiStarter.Migrations
 {
     [DbContext(typeof(TodoContext))]
-    partial class TodoContextModelSnapshot : ModelSnapshot
+    [Migration("20200127190932_add-product")]
+    partial class addproduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,37 +25,15 @@ namespace NetCoreApiStarter.Migrations
 
                     b.Property<DateTime>("CreatedOn");
 
+                    b.Property<string>("Description");
+
                     b.Property<bool>("IsComplete");
 
-                    b.Property<decimal>("Price");
-
                     b.Property<int>("Priority");
-
-                    b.Property<string>("Title");
 
                     b.HasKey("Id");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedOn = new DateTime(2020, 1, 27, 11, 20, 49, 875, DateTimeKind.Local).AddTicks(932),
-                            IsComplete = false,
-                            Price = 10.5m,
-                            Priority = 1,
-                            Title = "Monitor"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedOn = new DateTime(2020, 1, 27, 11, 20, 49, 875, DateTimeKind.Local).AddTicks(1927),
-                            IsComplete = false,
-                            Price = 15.2m,
-                            Priority = 3,
-                            Title = "USB dirve"
-                        });
                 });
 
             modelBuilder.Entity("NetCoreApiStarter.Models.ToDo", b =>
@@ -77,7 +57,7 @@ namespace NetCoreApiStarter.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 1, 27, 11, 20, 49, 873, DateTimeKind.Local).AddTicks(7121),
+                            CreatedOn = new DateTime(2020, 1, 27, 11, 9, 32, 615, DateTimeKind.Local).AddTicks(4385),
                             Description = "Clean house",
                             IsComplete = false,
                             Priority = 1
@@ -85,7 +65,7 @@ namespace NetCoreApiStarter.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedOn = new DateTime(2020, 1, 27, 11, 20, 49, 874, DateTimeKind.Local).AddTicks(9722),
+                            CreatedOn = new DateTime(2020, 1, 27, 11, 9, 32, 616, DateTimeKind.Local).AddTicks(7125),
                             Description = "Bake cake",
                             IsComplete = false,
                             Priority = 3

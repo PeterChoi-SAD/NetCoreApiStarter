@@ -76,6 +76,10 @@ namespace NetCoreApiStarter.Controllers
             return new ObjectResult(item);
         }
 
+        /// <summary>
+        /// Deletes a specific Project.
+        /// </summary> 
+        /// <param name="id"></param>
         [HttpDelete]
         [Route("MyDelete")] // Custom route
         public IActionResult MyDelete(long id)
